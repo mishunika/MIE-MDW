@@ -1,0 +1,10 @@
+-Event
+--name
+Meeting in Prague
+--start
+19th January 2015
+--location
+Thákurova 9, 160 00, Prague 6
+--sumary
+Meeting with partners
+-
