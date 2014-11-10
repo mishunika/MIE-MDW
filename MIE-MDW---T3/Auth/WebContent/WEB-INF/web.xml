@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Auth</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AuthTest</display-name>
+    <servlet-name>AuthTest</servlet-name>
+    <servlet-class>auth.AuthTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthTest</servlet-name>
+    <url-pattern>/AuthTest</url-pattern>
+  </servlet-mapping>
+  <security-constraint>
+      <web-resource-collection>
+        <web-resource-name>Application Resources</web-resource-name>
+        <url-pattern>/*</url-pattern>
+        <http-method>GET</http-method>
+        <http-method>POST</http-method>
+      </web-resource-collection>
+ 
+      <auth-constraint>
+        <role-name>webuser</role-name>
+      </auth-constraint>
+    </security-constraint>
+ 
+    <login-config>
+      <auth-method>BASIC</auth-method>
+      <realm-name>default</realm-name>
+    </login-config>
+ 
+    <security-role>
+      <role-name>webuser</role-name>
+    </security-role>
+</web-app>
